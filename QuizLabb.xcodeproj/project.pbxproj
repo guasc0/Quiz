@@ -13,6 +13,7 @@
 		3236AC8B1E2E073C000E5724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3236AC891E2E073C000E5724 /* Main.storyboard */; };
 		3236AC8D1E2E073C000E5724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3236AC8C1E2E073C000E5724 /* Assets.xcassets */; };
 		3236AC901E2E073C000E5724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3236AC8E1E2E073C000E5724 /* LaunchScreen.storyboard */; };
+		3236ACE51E2E5979000E5724 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236ACE41E2E5979000E5724 /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3236AC8C1E2E073C000E5724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3236AC8F1E2E073C000E5724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3236AC911E2E073C000E5724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3236ACE31E2E5979000E5724 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		3236ACE41E2E5979000E5724 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				3236AC8E1E2E073C000E5724 /* LaunchScreen.storyboard */,
 				3236AC911E2E073C000E5724 /* Info.plist */,
 				3236AC801E2E073C000E5724 /* Supporting Files */,
+				3236ACE31E2E5979000E5724 /* Model.h */,
+				3236ACE41E2E5979000E5724 /* Model.m */,
 			);
 			path = QuizLabb;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				3236AC881E2E073C000E5724 /* ViewController.m in Sources */,
 				3236AC851E2E073C000E5724 /* AppDelegate.m in Sources */,
 				3236AC821E2E073C000E5724 /* main.m in Sources */,
+				3236ACE51E2E5979000E5724 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +313,7 @@
 				3236AC961E2E073C000E5724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
