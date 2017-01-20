@@ -23,6 +23,8 @@
 @property (nonatomic) Model *m1;
 @property (weak, nonatomic) IBOutlet UITextView *questionText;
 //@property (nonatomic) NSDictionary *currentQuestion;
+@property (weak, nonatomic) IBOutlet UITextView *resultScreen;
+
 
 
 @end
@@ -31,10 +33,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*self.resultScreen.hidden = YES;
     [self fixButtons];
     self.m1 = [[Model alloc] init];
     [self.m1 addToDictionary];
     [self setQuestion];
+    [self.resultScreen setHidden:YES];*/
+    [self newGame];
     
     
     
@@ -80,8 +85,8 @@
     [self.button2 setTitle:(randomButtons[1]) forState:UIControlStateNormal];
     [self.button3 setTitle:(randomButtons[2]) forState:UIControlStateNormal];
     [self.button4 setTitle:(randomButtons[3]) forState:UIControlStateNormal];
-
-
+    self.nextQuestion.hidden = YES;
+    
 
 }
 
@@ -113,51 +118,44 @@
 
 - (IBAction)buttonPressed:(id)sender {
     UIButton *pressed = (UIButton *) sender;
-    
+    [self enableButtons:NO];
     if([self.m1 checkAnswer:pressed.titleLabel.text]){
         self.infoText.text = @"RÄTT!!!";
         pressed.backgroundColor = [UIColor greenColor];
+        
     } else {
         self.infoText.text = @"FEL!!!";
         pressed.backgroundColor = [UIColor redColor];
     }
     
-}
-/*- (IBAction)button2:(id)sender {
-    
-    if([self.currentQuestion[@"correctAnswer"] isEqualToString: sender.titleLabel.text]){
-        
-        
-    }else {
-        self.infoText.text = @"FEL!!!";
-        self.button2.backgroundColor = [UIColor redColor];
+    if(self.m1.nrOfRounds == 5){
+        [self.resultScreen setHidden:NO];
+        self.resultScreen.text = [NSString stringWithFormat:@"Du fick %d rätt", self.m1.rigthGuesses];
     }
+    self.nextQuestion.hidden = NO;
+    NSLog(@"%d", self.m1.rigthGuesses);
 }
-- (IBAction)button3:(id)sender {
-    
-    if([self.currentQuestion[@"correctAnswer"] isEqualToString: sender.titleLabel.text]){
-        self.infoText.text = @"RÄTT!!!";
-        self.button3.backgroundColor = [UIColor greenColor];
-        
-    }else {
-        self.infoText.text = @"FEL!!!";
-        self.button3.backgroundColor = [UIColor redColor];
-    }
-}
-- (IBAction)button4:(id)sender {
-    
-    if([self.currentQuestion[@"correctAnswer"] isEqualToString: sender.titleLabel.text]){
-        self.infoText.text = @"RÄTT!!!";
-        self.button4.backgroundColor = [UIColor greenColor];
-        
-    }else {
-        self.infoText.text = @"FEL!!!";
-        self.button4.backgroundColor = [UIColor redColor];
-    }
-}*/
+
 - (IBAction)nextQuestion:(id)sender {
     
+    [self enableButtons:YES];
     [self setQuestion];
+}
+
+- (void)enableButtons: (BOOL)enabled{
+    self.button.enabled = enabled;
+    self.button2.enabled = enabled;
+    self.button3.enabled = enabled;
+    self.button4.enabled = enabled;
+}
+- (void)newGame{
+    self.resultScreen.hidden = YES;
+    [self fixButtons];
+    self.m1 = [[Model alloc] init];
+    [self.m1 addToDictionary];
+    [self setQuestion];
+    [self.resultScreen setHidden:YES];
+    self.nextQuestion.hidden = YES;
 }
 
 

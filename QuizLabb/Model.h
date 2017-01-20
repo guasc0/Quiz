@@ -11,6 +11,9 @@
 @interface Model : NSObject
 @property (nonatomic) NSMutableArray * questionArray;
 @property (nonatomic) NSDictionary *currentQuestion;
+@property (nonatomic) int rigthGuesses;
+@property (nonatomic) int wrongGuesses;
+@property (nonatomic) int nrOfRounds;
 
 - (void)addToDictionary;
 - (bool) checkAnswer:(NSString*)sender;

@@ -53,7 +53,43 @@
                        @"wrongAnswer2": @"En bil",
                        @"wrongAnswer3": @"En cykel"};
     
-    self.questionArray = [NSMutableArray arrayWithObjects:self.question1, self.question2, self.question3, self.question4, nil];
+    self.question5 = @{@"question": @"Hur lång är en halvlek i handboll?",
+                       @"correctAnswer": @"30 min",
+                       @"wrongAnswer1": @"25 min",
+                       @"wrongAnswer2": @"35 min",
+                       @"wrongAnswer3": @"40 min"};
+    
+    self.question6 = @{@"question": @"Vilket år är det  i år?",
+                       @"correctAnswer": @"2017",
+                       @"wrongAnswer1": @"1927",
+                       @"wrongAnswer2": @"2012",
+                       @"wrongAnswer3": @"1976"};
+    
+    self.question7 = @{@"question": @"Vilket av följande partier anses inte vara en borgerligt sådant ?",
+                       @"correctAnswer": @"Socialdemokraterna",
+                       @"wrongAnswer1": @"Centerpartiet",
+                       @"wrongAnswer2": @"Moderaterna",
+                       @"wrongAnswer3": @"Kd"};
+    
+    self.question8 = @{@"question": @"Vad är en björn?",
+                       @"correctAnswer": @"Ett djur",
+                       @"wrongAnswer1": @"En människa",
+                       @"wrongAnswer2": @"En bil",
+                       @"wrongAnswer3": @"En cykel"};
+    
+    self.question9 = @{@"question": @"Vad är en björn?",
+                       @"correctAnswer": @"Ett djur",
+                       @"wrongAnswer1": @"En människa",
+                       @"wrongAnswer2": @"En bil",
+                       @"wrongAnswer3": @"En cykel"};
+    
+    self.question10 = @{@"question": @"Vad är en björn?",
+                       @"correctAnswer": @"Ett djur",
+                       @"wrongAnswer1": @"En människa",
+                       @"wrongAnswer2": @"En bil",
+                       @"wrongAnswer3": @"En cykel"};
+    
+    self.questionArray = [NSMutableArray arrayWithObjects:self.question1, self.question2, self.question3, self.question4, self.question5, self.question6, self.question7, self.question8, self.question9, self.question10, nil];
 }
 
 
@@ -61,10 +97,15 @@
 - (bool) checkAnswer:(NSString*) answer{
     NSLog(@" answer is:%@", answer);
     NSLog(@" rigth answer:%@", self.currentQuestion[@"correctAnswer"]);
+    self.nrOfRounds++;
+    if(self.nrOfRounds == 5){
     
+    }
     if([self.currentQuestion[@"correctAnswer"]isEqualToString: answer]){
+        self.rigthGuesses++;
         return YES;
     }else{
+        self.wrongGuesses++;
         return NO;
     }
 }

@@ -96,6 +96,17 @@
                                 <color key="textColor" red="1" green="0.11935960870040496" blue="0.17336797234351098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gw-PA-FbN">
+                                <rect key="frame" x="16" y="46" width="288" height="429"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">
+
+hfhsfjs</string>
+                                <color key="textColor" red="1" green="0.0065220749765387831" blue="0.020666251129426882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -108,12 +119,13 @@
                         <outlet property="nextQuestion" destination="Zuq-r7-yoc" id="mkE-fs-VMv"/>
                         <outlet property="questionText" destination="c7L-RX-9ZU" id="gv0-Oi-KBj"/>
                         <outlet property="questionView" destination="c7L-RX-9ZU" id="w26-QD-TEN"/>
+                        <outlet property="resultScreen" destination="7gw-PA-FbN" id="HRc-79-cXW"/>
                         <outlet property="textView" destination="c7L-RX-9ZU" id="8vi-Uy-XvM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1506" y="-432"/>
+            <point key="canvasLocation" x="-1507.5" y="-432.04225352112678"/>
         </scene>
     </scenes>
 </document>
