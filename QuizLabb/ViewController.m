@@ -53,7 +53,7 @@
     [self resetViewsAndButtons];
     int index = arc4random() % self.m1.questionArray.count;
     self.m1.currentQuestion = self.m1.questionArray[index];
-    self.questionText.text = [NSString stringWithFormat:@"\r \r %@", self.m1.currentQuestion[@"question"]];
+    self.questionText.text = [NSString stringWithFormat:@"\r \r%@", self.m1.currentQuestion[@"question"]];
     [self.m1.questionArray removeObjectAtIndex:index];
     [self setButtons];
     

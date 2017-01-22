@@ -115,7 +115,6 @@
 				TargetAttributes = {
 					3236AC7C1E2E073B000E5724 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 6KMXS32GZT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -277,7 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6KMXS32GZT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuizLabb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GSR.QuizLabb;
@@ -289,7 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6KMXS32GZT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuizLabb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GSR.QuizLabb;
