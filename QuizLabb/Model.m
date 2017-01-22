@@ -35,7 +35,7 @@
                        @"wrongAnswer2": @"röd",
                        @"wrongAnswer3": @"grön"};
     
-    self.question2 = @{@"question": @"Hur lång är du?",
+    self.question2 = @{@"question": @"Hur lång är jag?",
                        @"correctAnswer": @"178cm",
                        @"wrongAnswer1": @"182cm",
                        @"wrongAnswer2": @"167cm",
@@ -59,35 +59,35 @@
                        @"wrongAnswer2": @"35 min",
                        @"wrongAnswer3": @"40 min"};
     
-    self.question6 = @{@"question": @"Vilket år är det  i år?",
+    self.question6 = @{@"question": @"Vilket år är det i år?",
                        @"correctAnswer": @"2017",
                        @"wrongAnswer1": @"1927",
                        @"wrongAnswer2": @"2012",
                        @"wrongAnswer3": @"1976"};
     
-    self.question7 = @{@"question": @"Vilket av följande partier anses inte vara en borgerligt sådant ?",
-                       @"correctAnswer": @"Socialdemokraterna",
-                       @"wrongAnswer1": @"Centerpartiet",
-                       @"wrongAnswer2": @"Moderaterna",
-                       @"wrongAnswer3": @"Kd"};
+    self.question7 = @{@"question": @"Vilken månad är årets 3:e?",
+                       @"correctAnswer": @"Mars",
+                       @"wrongAnswer1": @"Oktober",
+                       @"wrongAnswer2": @"Maj",
+                       @"wrongAnswer3": @"Januari"};
     
-    self.question8 = @{@"question": @"Vad är en björn?",
-                       @"correctAnswer": @"Ett djur",
-                       @"wrongAnswer1": @"En människa",
-                       @"wrongAnswer2": @"En bil",
-                       @"wrongAnswer3": @"En cykel"};
+    self.question8 = @{@"question": @"Vad var Olof Palme?",
+                       @"correctAnswer": @"Statsminister",
+                       @"wrongAnswer1": @"President",
+                       @"wrongAnswer2": @"DJ",
+                       @"wrongAnswer3": @"Bartender"};
     
-    self.question9 = @{@"question": @"Vad är en björn?",
-                       @"correctAnswer": @"Ett djur",
-                       @"wrongAnswer1": @"En människa",
-                       @"wrongAnswer2": @"En bil",
-                       @"wrongAnswer3": @"En cykel"};
+    self.question9 = @{@"question": @"Vad blir 2^3 ?",
+                       @"correctAnswer": @"8",
+                       @"wrongAnswer1": @"12",
+                       @"wrongAnswer2": @"4",
+                       @"wrongAnswer3": @"6"};
     
-    self.question10 = @{@"question": @"Vad är en björn?",
-                       @"correctAnswer": @"Ett djur",
-                       @"wrongAnswer1": @"En människa",
-                       @"wrongAnswer2": @"En bil",
-                       @"wrongAnswer3": @"En cykel"};
+    self.question10 = @{@"question": @"Hur många stater har USA ?",
+                       @"correctAnswer": @"50",
+                       @"wrongAnswer1": @"12",
+                       @"wrongAnswer2": @"78",
+                       @"wrongAnswer3": @"49"};
     
     self.questionArray = [NSMutableArray arrayWithObjects:self.question1, self.question2, self.question3, self.question4, self.question5, self.question6, self.question7, self.question8, self.question9, self.question10, nil];
 }
@@ -98,9 +98,7 @@
     NSLog(@" answer is:%@", answer);
     NSLog(@" rigth answer:%@", self.currentQuestion[@"correctAnswer"]);
     self.nrOfRounds++;
-    if(self.nrOfRounds == 5){
     
-    }
     if([self.currentQuestion[@"correctAnswer"]isEqualToString: answer]){
         self.rigthGuesses++;
         return YES;

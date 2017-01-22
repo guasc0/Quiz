@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *questionView;
-
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
@@ -19,12 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextQuestion;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *infoText;
-//@property (nonatomic) NSMutableArray *questionArray;
-@property (nonatomic) Model *m1;
 @property (weak, nonatomic) IBOutlet UITextView *questionText;
-//@property (nonatomic) NSDictionary *currentQuestion;
 @property (weak, nonatomic) IBOutlet UITextView *resultScreen;
-
+@property (nonatomic) Model *m1;
 
 
 @end
@@ -33,12 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /*self.resultScreen.hidden = YES;
-    [self fixButtons];
-    self.m1 = [[Model alloc] init];
-    [self.m1 addToDictionary];
-    [self setQuestion];
-    [self.resultScreen setHidden:YES];*/
     [self newGame];
     
     
@@ -50,7 +40,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)resetviewsAndButtons{
+-(void)resetViewsAndButtons{
     self.button.backgroundColor = [UIColor blackColor];
     self.button2.backgroundColor = [UIColor blackColor];
     self.button3.backgroundColor = [UIColor blackColor];
@@ -60,16 +50,13 @@
 
 - (void)setQuestion{
     
-    [self resetviewsAndButtons];
-    
+    [self resetViewsAndButtons];
     int index = arc4random() % self.m1.questionArray.count;
     self.m1.currentQuestion = self.m1.questionArray[index];
-    
     self.questionText.text = self.m1.currentQuestion[@"question"];
     [self.m1.questionArray removeObjectAtIndex:index];
     [self setButtons];
     
-
 }
 
 - (void)setButtons{
@@ -120,26 +107,31 @@
     UIButton *pressed = (UIButton *) sender;
     [self enableButtons:NO];
     if([self.m1 checkAnswer:pressed.titleLabel.text]){
-        self.infoText.text = @"RÄTT!!!";
         pressed.backgroundColor = [UIColor greenColor];
         
     } else {
-        self.infoText.text = @"FEL!!!";
         pressed.backgroundColor = [UIColor redColor];
     }
     
     if(self.m1.nrOfRounds == 5){
         [self.resultScreen setHidden:NO];
-        self.resultScreen.text = [NSString stringWithFormat:@"Du fick %d rätt", self.m1.rigthGuesses];
+        self.resultScreen.text = [NSString stringWithFormat:@"Antal rätt: %d\r Antal fel: %d", self.m1.rigthGuesses, self.m1.wrongGuesses];
+        [self.nextQuestion setTitle:@"Spela igen" forState:UIControlStateNormal];
+        
+        
     }
     self.nextQuestion.hidden = NO;
     NSLog(@"%d", self.m1.rigthGuesses);
 }
 
 - (IBAction)nextQuestion:(id)sender {
-    
     [self enableButtons:YES];
     [self setQuestion];
+    
+    if([self.nextQuestion.titleLabel.text isEqual:@"Spela igen"]){
+        [self newGame];
+        self.resultScreen.hidden = YES;
+    }
 }
 
 - (void)enableButtons: (BOOL)enabled{
@@ -156,6 +148,7 @@
     [self setQuestion];
     [self.resultScreen setHidden:YES];
     self.nextQuestion.hidden = YES;
+    [self.nextQuestion setTitle:@"Nästa fråga" forState:UIControlStateNormal];
 }
 
 
