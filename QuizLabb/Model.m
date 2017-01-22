@@ -83,7 +83,7 @@
                        @"wrongAnswer2": @"4",
                        @"wrongAnswer3": @"6"};
     
-    self.question10 = @{@"question": @"Hur många stater har USA ?",
+    self.question10 = @{@"question": @"Hur många stater har USA?",
                        @"correctAnswer": @"50",
                        @"wrongAnswer1": @"12",
                        @"wrongAnswer2": @"78",
