@@ -53,7 +53,7 @@
     [self resetViewsAndButtons];
     int index = arc4random() % self.m1.questionArray.count;
     self.m1.currentQuestion = self.m1.questionArray[index];
-    self.questionText.text = self.m1.currentQuestion[@"question"];
+    self.questionText.text = [NSString stringWithFormat:@"\r \r %@", self.m1.currentQuestion[@"question"]];
     [self.m1.questionArray removeObjectAtIndex:index];
     [self setButtons];
     
@@ -115,7 +115,7 @@
     
     if(self.m1.nrOfRounds == 5){
         [self.resultScreen setHidden:NO];
-        self.resultScreen.text = [NSString stringWithFormat:@"Antal rätt: %d\r Antal fel: %d", self.m1.rigthGuesses, self.m1.wrongGuesses];
+        self.resultScreen.text = [NSString stringWithFormat:@"\r\rAntal rätt: %d\r Antal fel: %d", self.m1.rigthGuesses, self.m1.wrongGuesses];
         [self.nextQuestion setTitle:@"Spela igen" forState:UIControlStateNormal];
         
         

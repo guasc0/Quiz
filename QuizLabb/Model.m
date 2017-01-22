@@ -21,7 +21,7 @@
 @property (nonatomic) NSDictionary *question9;
 @property (nonatomic) NSDictionary *question10;
 
-//@property (nonatomic) NSDictionary *currentQuestion;
+
 @end
 
 @implementation Model
@@ -30,10 +30,10 @@
 - (void)addToDictionary{
     
     self.question1 = @{@"question": @"Vilken färg har solen?",
-                       @"correctAnswer": @"gul",
-                       @"wrongAnswer1": @"blå",
-                       @"wrongAnswer2": @"röd",
-                       @"wrongAnswer3": @"grön"};
+                       @"correctAnswer": @"Gul",
+                       @"wrongAnswer1": @"Blå",
+                       @"wrongAnswer2": @"Röd",
+                       @"wrongAnswer3": @"Grön"};
     
     self.question2 = @{@"question": @"Hur lång är jag?",
                        @"correctAnswer": @"178cm",
